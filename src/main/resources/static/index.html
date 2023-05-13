@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Flashcard</title>
+    <style>
+body {
+  overflow: hidden;
+  background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-bottom: 10vh;
+  white-space: nowrap;
+
+}
+
+#flashcard-front {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flashcard {
+  border-radius: 10px;
+  width: 80vw;
+  height: 50vh;
+  background-color: rgba(255, 255, 255, 0.5); /* Fallback */
+  -webkit-backdrop-filter: blur(10px); /* Safari fallback */
+  backdrop-filter: blur(10px); /* Standard */;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  padding: 5vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+  color: black;
+}
+
+.flashcard h2 {
+  margin-top: 0;
+  font-size: 4em;
+}
+
+#flashcard-pinyin {
+  position: absolute;
+  top: calc(50% + 50px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  margin-top: 1em;
+}
+
+.flashcard p {
+  font-size: 2.5em;
+  padding: 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flashcard p span:first-child {
+  margin-bottom: 0.5em;
+}
+
+.next-button {
+  padding: 2vh 5vw; /* changed from 10px 20px */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 3vw; /* changed from 16px */
+  font-family: 'Raleway', sans-serif;
+}
+
+.next-button:hover {
+  background-color: #3e8e41;
+}
+
+.next-button-container {
+  position: absolute;
+  bottom: 5vh; /* changed from 140px */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.click-to-flip {
+  color: black;
+  position: absolute;
+  bottom: 12vh; /* changed from 190px */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 5vw;
+}
+
+@media (min-width: 626px){
+  .flashcard {
+    width: 40vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 668px){
+  .flashcard {
+    width: 60vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 698px){
+  .flashcard {
+    width: 60vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 694px){
+  .flashcard {
+    width: 60vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 694px){
+  .flashcard {
+    width: 60vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 666px){
+  .flashcard {
+    width: 90vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 619px){
+  .flashcard {
+    width: 70vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 4vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 693px){
+  .flashcard {
+    width: 70vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 691px){
+  .flashcard {
+    width: 70vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 800px){
+  .flashcard {
+    width: 40vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 949px) { /* adjust for larger screens */
+  .flashcard h2 {
+  margin-top: 0;
+  font-size: 2em;
+}
+  .flashcard {
+    width: 40vw;
+    height: 60vh;
+    padding: 2vw;
+    padding-bottom: 10px;
+  }
+
+  .next-button {
+    padding: 2vh 4vw;
+    font-size: 2vw;
+  }
+
+  .next-button-container {
+    bottom: 10vh;
+  }
+
+  .click-to-flip {
+    font-size: 50px; /* adjust as needed */
+    color: black;
+    position: absolute;
+    bottom: 5%; /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+  .next-button {
+    margin-top: 20px;
+  }
+
+}
+    </style>
+</head>
+
+<body>
+<div class="flashcard">
+    <h2 id="flashcard-front">Loading...</h2>
+    <p id="flashcard-pinyin"></p>
+    <p id="flashcard-back"></p>
+</div>
+<div class="next-button-container">
+    <button id="next-button" class="next-button">Next Card</button>
+</div>
+
+<script>
+  let isFlipped = false;
+  let currentCardIndex = 0;
+
+  const flashcard = document.querySelector('.flashcard');
+  const flashcardFront = document.getElementById('flashcard-front');
+  const flashcardBack = document.getElementById('flashcard-back');
+  const flashcardPinyin = document.getElementById('flashcard-pinyin');
+  const nextButton = document.getElementById('next-button'); 
+
+  function showFront() {
+    flashcardFront.style.display = 'block';
+    flashcardBack.style.display = 'none';
+    flashcardPinyin.style.display = 'block';
+    isFlipped = false;
+  }
+
+  function showBack() {
+    flashcardFront.style.display = 'none';
+    flashcardBack.style.display = 'block';
+    flashcardPinyin.style.display = 'none';
+    isFlipped = true;
+  }
+  
+  function showNextCard() {
+    fetch('http://localhost:8080/mandarin/flashcards')
+      .then(response => response.json())
+      .then(data => {
+        currentCardIndex++;
+        if (currentCardIndex >= data.length) {
+          currentCardIndex = 0;
+        }
+        const front = data[currentCardIndex].front;
+        const back = data[currentCardIndex].back;
+        const pinyin = data[currentCardIndex].pinyin;
+        const difficulty = data[currentCardIndex].difficulty;
+
+        flashcardFront.innerText = front;
+        flashcardPinyin.innerText = pinyin;
+        flashcardBack.innerText = back;
+        showFront();
+      })
+      .catch(error => console.log(error));
+  }
+
+  showNextCard();
+
+  flashcard.addEventListener('click', () => {
+    if (isFlipped) {
+      showFront();
+    } else {
+      showBack();
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    showNextCard();
+  });
+</script>
+
+</body>
+</html>

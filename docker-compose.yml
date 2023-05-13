@@ -2,6 +2,11 @@ version: "3.9"
 services:
   my-app:
     image: mandarin-flashcard-application
+    environment:
+      - MONGO_DATABASE=mandarinDatabase
+      - MONGO_USER=lioneltlynch
+      - MONGO_PASSWORD=Lionel2324
+      - MONGO_CLUSTER=cluster0.ij7tcyu.mongodb.net
     ports:
       - "8080:8080"
     networks:

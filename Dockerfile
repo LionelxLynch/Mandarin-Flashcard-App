@@ -8,11 +8,12 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 # Copy the JAR file to the current directory
-COPY target/mandarin-flashcard-application-0.0.1-SNAPSHOT.jar .
+COPY ./target/mandarin-flashcard-application-0.0.1-SNAPSHOT.jar .
 
 # Run stage
-FROM openjdk:17
+FROM openjdk:17-jdk-alpine
 WORKDIR /app
 COPY --from=build /app/mandarin-flashcard-application-0.0.1-SNAPSHOT.jar .
 ENV PORT=8080
-CMD ["java", "-Dserver.port=${PORT}", "-jar", "mandarin-flashcard-application-0.0.1-SNAPSHOT.jar"]
+EXPOSE ${PORT}
+CMD ["java", "-jar", "./mandarin-flashcard-application-0.0.1-SNAPSHOT.jar"]

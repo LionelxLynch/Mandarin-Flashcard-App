@@ -17,5 +17,4 @@ public class MandarinFlashcardApplication {
 		// Run application
 		SpringApplication.run(MandarinFlashcardApplication.class, args);
 	}
-
 }

@@ -2,7 +2,7 @@
 
 <div style="display: flex; align-items: flex-start;">
   <img src="images/Screenshot%202023-05-08%20at%2010.18.29%20AM.png" alt="Screenshot 1" style="width: 400px;" />
-  <img src="images/Screenshot%202023-05-08%20at%2010.20.54%20AM.png" alt="Screenshot 2" style="width: 400px;" />
+  <img src="images/Screenshot%202023-05-08%20at%2010.20.54%20AM.png" alt="Screenshot 2" style="width: 400px;" style="padding-top: 10px;" />
 </div>
 
 ## Description

@@ -1,8 +1,8 @@
 # Mandarin Flashcard Application
 
 <div align="center">
-  <img src="images/Screenshot%202023-05-13%20at%208.37.18%20PM.png" alt="Screenshot 1" width="400" />
-  <img src="images/Screenshot%202023-05-13%20at%208.37.26%20PM.png" alt="Screenshot 2" width="400" />
+  <img src="images/Screenshot%202023-05-13%20at%208.37.18%20PM.png" alt="Screenshot 1" width="500" />
+  <img src="images/Screenshot%202023-05-13%20at%208.37.26%20PM.png" alt="Screenshot 2" width="500" />
 </div>
 
 ## Description

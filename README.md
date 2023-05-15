@@ -13,6 +13,8 @@ The backend of the application is built with Spring Boot and Java, providing a r
 
 To enhance data storage and retrieval, the backend is connected to a Mongo Atlas database. This allows for seamless management of flashcard data, ensuring a smooth learning experience for the users.
 
+The Mandarin Flashcard App is containerized using Docker, making it easy to deploy and run in different environments.
+
 ## Usage
 
 ### Using Docker

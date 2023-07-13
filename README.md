@@ -7,7 +7,7 @@
 
 ## Description
 
-The Mandarin Flashcard Application is a web-based tool designed to help users learn Mandarin characters through interactive flashcards. This application is developed by Lionel Lynch.
+The Mandarin Flashcard Application is a web-based tool designed to help users learn Mandarin characters through interactive flashcards.
 
 The backend of the application is built with Spring Boot and Java, providing a robust and efficient foundation for handling data and business logic. The frontend is developed using HTML, CSS, and JavaScript, ensuring an intuitive and user-friendly experience.
 
